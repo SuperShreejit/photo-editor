@@ -1,0 +1,46 @@
+.sidebar {
+	grid-area: sidebar;
+	background-color: hsl(265, 100%, 80%);
+	border-left: hsl(265, 100%, 55%);
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+
+	&-item {
+		cursor: pointer;
+		border: none;
+		outline: none;
+		color: hsl(265, 100%, 98%);
+		background-color: hsl(265, 100%, 82%);
+		padding: 1em;
+		position: relative;
+		transition: background-color 250ms ease-in-out;
+
+		&.active {
+			background-color: hsl(265, 100%, 90%);
+		}
+
+		&:hover,
+		&:focus {
+			background-color: hsl(265, 100%, 70%);
+		}
+
+		&:active {
+			background-color: hsl(265, 100%, 60%);
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			width: 80%;
+			left: 10%;
+			bottom: 0%;
+			height: 1px;
+			background-color: hsl(265, 100%, 40%);
+		}
+
+		&:last-child::after {
+			display: none;
+		}
+	}
+}
